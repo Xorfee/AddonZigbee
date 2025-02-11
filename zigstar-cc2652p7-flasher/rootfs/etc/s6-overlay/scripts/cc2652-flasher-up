@@ -6,11 +6,8 @@
 set -e
 
 declare network_device
-
 declare network_device_url
-
 declare firmware
-
 declare exit_status
 
 function cleanup() {
