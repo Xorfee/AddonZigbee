@@ -1,14 +1,16 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Start cc2652p7-flasher-up
+# Start cc2652p7-flasher-up 
 # ==============================================================================
 
 set -e
 
-declare device
 declare network_device
+
 declare network_device_url
+
 declare firmware
+
 declare exit_status
 
 function cleanup() {
@@ -28,11 +30,7 @@ function exit_no_firmware {
 network_device=$(bashio::config 'network_device')
 network_device_url=$(echo "$network_device" | sed 's/.\{5\}$//')
 
-if bashio::config.true 'usb_mode'; then
-    device=$(bashio::config 'device')
-else
-    device="socket://${network_device}"
-fi
+device="socket://${network_device}"
 
 # Firmware choice
 if bashio::config.true 'coordinator_fw'; then
@@ -65,13 +63,11 @@ else
         bashio::log.warning "Downloading firmware failed"
         exit 0
     fi
-
     unzip -p "/root/firmware.zip" > "/root/firmware.hex"
     if [ ! -f "/root/firmware.hex" ]; then
         bashio::log.warning "Downloading firmware failed"
         exit 0
     fi
-
     firmware="firmware.hex"
 fi
 
