@@ -1,9 +1,9 @@
 ---
-version: 0.2.0
-slug: zigstar-cc2652p7-flasher
-name: ZigStar TI CC2652P7 FW Flasher
-description: ZigStar TI CC2652P7 firmware flasher addon for UZG-01
-url: https://github.com/mercenaruss/zigstar_addons/tree/master/zigstar-cc2652p7-flasher/
+version: 1.0
+slug: AiO Flasher
+name: AiO CC2652P7 ZIGBEE Flasher
+description: Addon to flash the Zigbee Driver on the AiO Sensor
+url: https://github.com/Xorfee/AddonZigbee
 arch:
   - aarch64
   - amd64
@@ -24,7 +24,6 @@ schema:
   coordinator_fw: bool
   router_fw: bool
   firmware_url: str?
-  trigger_bsl: bool?
 stage: experimental
 startup: once
 boot: manual
