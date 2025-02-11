@@ -75,7 +75,6 @@ fi
 
 if bashio::config.true 'trigger_bsl'; then
     bashio::log.info "Triggering Bootloader mode on ${network_device_url}"
-    curl -X POST -H "ETWzc8l+XyaM8NB/4gNYW1qwaZuqlmURcrlNhNrAUKU=" http://192.168.1.27/button/zigbee_update/press   
     sleep 5s
 fi
 
